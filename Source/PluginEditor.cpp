@@ -48,7 +48,7 @@ void CtagdrcAudioProcessorEditor::resized()
 {
     auto area = getLocalBounds().reduced(Constants::Margins::big);
 
-    const auto headerHeight = area.getHeight() / 12;
+    const auto headerHeight = area.getHeight() / 8;
     const auto footerHeight = area.getHeight() / 12;
     const auto btnAreaWidth = area.getWidth() / 3;
     const auto btnBotHeight = area.getHeight() / 5;
@@ -57,7 +57,7 @@ void CtagdrcAudioProcessorEditor::resized()
     auto lBtnArea = area.removeFromLeft(btnAreaWidth).reduced(Constants::Margins::medium);
     auto rBtnArea = area.removeFromRight(btnAreaWidth).reduced(Constants::Margins::medium);
     auto botBtnArea = area.removeFromBottom(btnBotHeight).reduced(Constants::Margins::medium);
-    auto footer = area.removeFromTop(headerHeight).reduced(Constants::Margins::small);
+    auto footer = area.removeFromTop(footerHeight).reduced(Constants::Margins::small);
 
 
     const FlexItem::Margin knobMargin = FlexItem::Margin(Constants::Margins::medium);
@@ -70,7 +70,7 @@ void CtagdrcAudioProcessorEditor::resized()
     headerBox.flexDirection = FlexBox::Direction::row;
     headerBox.justifyContent = FlexBox::JustifyContent::spaceAround;
     headerBox.items.add(FlexItem().withFlex(8.5).withMargin(buttonMargin));
-    headerBox.items.add(FlexItem(appTitle).withFlex(6).withMargin(0));
+    headerBox.items.add(FlexItem(/*appTitle*/).withFlex(6).withMargin(0));
     headerBox.items.add(FlexItem().withFlex(5).withMargin(buttonMargin));
     //headerBox.items.add(FlexItem(autoReleaseButton).withFlex(2).withMargin(buttonMargin));
     //headerBox.items.add(FlexItem(autoMakeupButton).withFlex(2).withMargin(buttonMargin));
